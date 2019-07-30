@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,20 +15,28 @@ public class UploadService {
 
     private static String BasePath = "D:\\upload";
 
-    public Boolean upload(MultipartFile file) throws Exception {
+    public Boolean upload(MultipartFile file) {
 
         String contentType = file.getContentType();
         if(!imgTypes.contains(contentType)){
-            throw new Exception("error type of image");
+            System.out.println("error");
+            return false;
         }
         if(file.isEmpty()){
-            throw new Exception("empty of image");
+            System.out.println("error");
+            return false;
         }
         File dir = new File(BasePath);
         if (!dir.exists()) {
             dir.mkdir();
         }
-        file.transferTo(new File(dir,file.getOriginalFilename()));
+        try {
+            file.transferTo(new File(dir,file.getOriginalFilename()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        }
         System.out.println(file.getOriginalFilename()+"============");
         return true;
     }

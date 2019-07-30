@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 @Controller
-@RequestMapping("/uploadController/")
+@RequestMapping("/upload/")
 public class UploadController {
 
     @Autowired
@@ -19,11 +19,7 @@ public class UploadController {
     @RequestMapping("up")
     @ResponseBody
     public void uploadImg(@RequestParam("file") MultipartFile file){
-        try {
             Boolean result = uploadService.upload(file);
             System.out.println(result);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }
