@@ -8,7 +8,7 @@ import javax.persistence.Table;
 /**
  * Created by Administrator on 2019/8/1.
  */
-@Table(name="tb_category")
+@Table(name="tb_spec_group")
 public class Group {
 
     @Id
