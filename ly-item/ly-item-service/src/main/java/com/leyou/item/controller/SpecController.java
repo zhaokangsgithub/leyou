@@ -20,7 +20,7 @@ public class SpecController {
     @Autowired
     private SpecService specService;
 
-    @RequestMapping("group/{cid}")
+    @RequestMapping("groups/{cid}")
     @ResponseBody
     public List<Group> getGroupByCid(@PathVariable("cid")Long cid) {
 
