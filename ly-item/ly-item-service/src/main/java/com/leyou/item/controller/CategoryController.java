@@ -32,4 +32,42 @@ public class CategoryController {
 
         return  categoryService.queryCategoryList(pid);
     }
+
+    private  static Object lockObj =new Object();
+
+    public static void main(String[] args) {
+
+
+        Runnable run = new Runnable(
+        ) {
+            @Override
+            public void run() {
+
+                System.out.println("run方法进入.....");
+                try {
+                    synchronized (lockObj) {
+                        lockObj.wait();
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("run方法退出.....");
+            }
+        };
+        new Thread(run).start();
+        System.out.println("主线程先跑一会");
+
+        try {
+            synchronized (lockObj) {
+                lockObj.notifyAll();
+            }
+
+            Thread.sleep(10l);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+
+    }
 }
