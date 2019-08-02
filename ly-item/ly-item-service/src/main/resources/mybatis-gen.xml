@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--找到MySQL驱动包的路径-->
+    <classPathEntry
+            location="D:\maven_repository\mysql\mysql-connector-java\8.0.13\mysql-connector-java-8.0.13.jar"/>
+    <!--配置连接MySQL数据库的信息-->
+    <context id="Mybatis" targetRuntime="MyBatis3">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://120.78.172.84:3306/zkdb"
+                        userId="root"
+                        password="mojay0118">
+        </jdbcConnection>
+        <!--会将数据库里的int类型数据转换为Java里的bigDecimals -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--配置各个文件的相对路径和项目路径-->
+        <!--产生实体类，需要和App是同级的-->
+        <javaModelGenerator targetPackage="com.leyou.item.domain"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--映射文件，一定是在resources中的-->
+        <sqlMapGenerator targetPackage="item" targetProject="src/main/resources/mapper/">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--底层dao-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.leyou.item.mapper"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--将example类型设为false，否则实体类里面会多一个example的类exampleStudent -->
+        <!--表明为数据库的表明，生成实体类Student，会自动生成到entity的目录中-->
+
+        <table tableName="tb_order"
+               domainObjectName="Order"
+               enableCountByExample="true" enableDeleteByExample="true"
+               enableInsert="true" enableDeleteByPrimaryKey="true"
+               enableSelectByExample="true" enableSelectByPrimaryKey="true"
+               enableUpdateByExample="true" enableUpdateByPrimaryKey="true">
+        </table>
+
+        <!--<table tableName="t_sync_boss_oper_detail"
+               domainObjectName="SyncBossOperDetail"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableInsert="true" enableDeleteByPrimaryKey="false"
+               enableSelectByExample="false" enableSelectByPrimaryKey="true"
+               enableUpdateByExample="false" enableUpdateByPrimaryKey="true">
+        </table>-->
+
+        <!--<table tableName="t_boss_audit_record"
+               domainObjectName="BossAuditRecord"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableInsert="true" enableDeleteByPrimaryKey="false"
+               enableSelectByExample="false" enableSelectByPrimaryKey="true"
+               enableUpdateByExample="false" enableUpdateByPrimaryKey="true">
+        </table>-->
+    </context>
+</generatorConfiguration>

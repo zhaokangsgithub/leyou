@@ -29,3 +29,6 @@ fdfs:
     height: 60
   tracker-list: # tracker地址
     - 120.78.172.84:22122
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: com.leyou.item.domain

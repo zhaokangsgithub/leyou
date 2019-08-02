@@ -44,8 +44,12 @@ public class Category {
         return isParent;
     }
 
-    public void setIsParent(Boolean isParent) {
-        isParent = isParent;
+    public void setIsParent(Long isParent) {
+        if(isParent==0){
+           this.isParent = false;
+        }else if(isParent==1){
+            this.isParent = true;
+        }
     }
 
     public Integer getSort() {

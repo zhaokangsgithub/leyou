@@ -19,9 +19,7 @@ public class SpecService {
 
     public List<Group> getGroupByCid(Long cid) {
 
-        Group group = new Group();
-        group.setCid(cid);
-        return specMapper.select(group);
+        return specMapper.findGroupByCid(cid);
 
     }
 }
