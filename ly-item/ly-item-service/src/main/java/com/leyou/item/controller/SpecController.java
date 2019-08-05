@@ -28,4 +28,13 @@ public class SpecController {
         return groups;
     }
 
+    @RequestMapping("addSpecGroup")
+    @ResponseBody
+    public int addSpecGroup(String name,int id , int cid) {
+        Group group = new Group();
+
+        int resultId = specService.addSpecGroup(group);
+        return resultId;
+    }
+
 }

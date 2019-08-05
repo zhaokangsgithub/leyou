@@ -22,4 +22,10 @@ public class SpecService {
         return specMapper.findGroupByCid(cid);
 
     }
+
+    public int addSpecGroup(Group group)
+    {
+        int id = specMapper.addSpecGroup(group);
+        return id;
+    }
 }

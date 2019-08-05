@@ -51,4 +51,23 @@ public class Group {
                 ", name='" + name + '\'' +
                 '}';
     }
+
+   /* class Builder{
+
+        private Long id;
+
+        Long cid;
+
+        String name;
+
+        public Builder newBuilder(){
+           return  new Group.Builder();
+        }
+
+        public Builder id( Long id){
+            this.id=id;
+
+        }
+
+    }*/
 }
