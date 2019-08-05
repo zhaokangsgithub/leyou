@@ -17,4 +17,6 @@ public interface SpecMapper
     void addGroup(Group group);
 
     void updateGroup(Group group);
+
+    int addSpecGroup(Group group);
 }

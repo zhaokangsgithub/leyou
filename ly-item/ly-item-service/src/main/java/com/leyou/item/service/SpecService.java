@@ -32,4 +32,10 @@ public class SpecService {
             specMapper.updateGroup(group);
         }
     }
+
+    public int addSpecGroup(Group group)
+    {
+        int id = specMapper.addSpecGroup(group);
+        return id;
+    }
 }

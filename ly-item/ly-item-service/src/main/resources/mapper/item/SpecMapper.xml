@@ -12,6 +12,17 @@
         where cid = #{cid}
     </select>
 
+  <insert id="addSpecGroup" parameterType="com.leyou.item.pojo.Group">
+
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+
+    INSERT INTO `zkdb`.`tb_spec_group` (`id`, `cid`, `name`)
+    VALUES
+	(#{id}, #{cid}, #{name});
+  </insert>
+
     <update id="updateGroup" parameterType="com.leyou.item.pojo.Group">
       UPDATE tb_spec_group set NAME = #{name} where id = #{id}
     </update>
