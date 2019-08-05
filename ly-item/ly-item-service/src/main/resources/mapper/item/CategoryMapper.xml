@@ -20,4 +20,11 @@
     where parent_id = #{pid}
   </select>
 
+  <select id="queryNameByIds"  parameterType="java.lang.Long" resultMap="BaseMap">
+    select * from   tb_category where id IN
+     <foreach collection="ids" item="id" open="(" close=")" separator=",">
+       #{id}
+     </foreach>
+  </select>
+
 </mapper>
