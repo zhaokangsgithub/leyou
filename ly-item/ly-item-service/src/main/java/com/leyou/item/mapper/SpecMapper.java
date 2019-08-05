@@ -13,4 +13,8 @@ import java.util.List;
 public interface SpecMapper
 {
     List<Group> findGroupByCid(Long cid);
+
+    void addGroup(Group group);
+
+    void updateGroup(Group group);
 }

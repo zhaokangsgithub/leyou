@@ -4,7 +4,7 @@ spring:
   application:
     name: item-service
   datasource:
-    url: jdbc:mysql://120.78.172.84:3306/zkdb
+    url: jdbc:mysql://120.78.172.84:3306/zkdb?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: mojay0118
   cloud:

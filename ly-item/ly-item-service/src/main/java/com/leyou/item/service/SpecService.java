@@ -22,4 +22,14 @@ public class SpecService {
         return specMapper.findGroupByCid(cid);
 
     }
+
+    public void addOrUpdateGroup(Group group) {
+
+        Long id = group.getId();
+        if(id == null){
+            specMapper.addGroup(group);
+        }else{
+            specMapper.updateGroup(group);
+        }
+    }
 }

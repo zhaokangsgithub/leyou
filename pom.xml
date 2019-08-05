@@ -112,6 +112,7 @@
                     <debug>true</debug>
                     <optimize>true</optimize>
                     <skip>true</skip>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
         </plugins>
