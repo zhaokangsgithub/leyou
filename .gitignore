@@ -7,7 +7,7 @@
 *.iml
 out
 gen
-#.gitignore
+.gitignore
 .jar
 .class
 .lst
