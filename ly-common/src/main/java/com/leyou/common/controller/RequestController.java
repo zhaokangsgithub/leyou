@@ -16,20 +16,18 @@ public class RequestController {
     public String sayHello(){
         String result = "hello xiaosunkang";
         System.out.println("tets get new ");
-        System.out.println("test get new ");
-        System.out.println("test get new ");
-        System.out.println("test get new ");
-        System.out.println("test get new ");
-        System.out.println("test get new ");
-        System.out.println("test get new ");
-        System.out.println("test get new ");
-        System.out.println("test get new ");
-        System.out.println("test get new ");
-        System.out.println("test get new ");
-        System.out.println("test get new ");
-        System.out.println("test get new ");
-        System.out.println("test get new ");
-        System.out.println("test get new ");
+
+        System.out.println("ceshi ceshi ceshi ");
+        System.out.println("ceshi ceshi ceshi ");
+        System.out.println("ceshi ceshi ceshi ");
+        System.out.println("ceshi ceshi ceshi ");
+        System.out.println("ceshi ceshi ceshi ");
+        System.out.println("ceshi ceshi ceshi ");
+        System.out.println("ceshi ceshi ceshi ");
+        System.out.println("ceshi ceshi ceshi ");
+        System.out.println("ceshi ceshi ceshi ");
+        System.out.println("ceshi ceshi ceshi ");
+
         return result;
 
     }
