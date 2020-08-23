@@ -14,7 +14,7 @@ public class RequestController {
 
     @ResponseBody
     public String sayHello(){
-        String result = "hello zhaokang";
+        String result = "hello xiaosunkang";
         return result;
 
     }
